@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nft_marketplace/gen/fonts.gen.dart';
 import 'package:nft_marketplace/screens/explore_screen.dart';
 
 void main() {
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+          fontFamily: FontFamily.plusJakartaSans),
       home: const ExploreScreen(),
     );
   }
