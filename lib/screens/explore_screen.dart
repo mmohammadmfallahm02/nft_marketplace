@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:nft_marketplace/dummy_data.dart';
 import 'package:nft_marketplace/models/nft_model.dart';
 
@@ -12,28 +10,63 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
     return Scaffold(
-      body: Transform.rotate(
-        angle: -0.08,
-        child: OverflowBox(
-          maxWidth: size.width * 1.5,
-          child: Column(children: [
-            ListWidget(
-              items: DummyDate.exploreFirstList,
-              duration: 80,
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: ShaderMask(
+              blendMode: BlendMode.dstOut,
+              shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.white,
+                      Colors.transparent,
+                      Colors.transparent,
+                      Colors.transparent,
+                      Colors.white.withOpacity(0.3),
+                      Colors.white.withOpacity(0.97),
+                      Colors.white,
+                      Colors.white
+                    ],
+                    stops: const [
+                      0,
+                      0.15,
+                      0.40,
+                      0.50,
+                      0.60,
+                      0.69,
+                      0.73,
+                      1
+                    ]).createShader(bounds);
+              },
+              child: Transform.rotate(
+                angle: -0.08,
+                child: OverflowBox(
+                  maxWidth: size.width * 1.5,
+                  child: Column(children: [
+                    ListWidget(
+                      items: DummyDate.exploreFirstList,
+                      duration: 100,
+                    ),
+                    ListWidget(
+                      items: DummyDate.exploreSecondList,
+                      duration: 110,
+                    ),
+                    ListWidget(
+                      items: DummyDate.exploreItemThirdList,
+                      duration: 130,
+                    ),
+                    ListWidget(
+                      items: DummyDate.exploreItemFourthList,
+                      duration: 100,
+                    )
+                  ]),
+                ),
+              ),
             ),
-            ListWidget(
-              items: DummyDate.exploreSecondList,
-            ),
-            ListWidget(
-              items: DummyDate.exploreItemThirdList,
-              duration: 120,
-            ),
-            ListWidget(
-              items: DummyDate.exploreItemFourthList,
-              duration: 90,
-            )
-          ]),
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -84,8 +117,9 @@ class _ListWidgetState extends State<ListWidget> {
     return SizedBox(
       height: 165,
       child: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           reverse: true,
-         controller: _scrollController,
+          controller: _scrollController,
           itemCount: 50,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
