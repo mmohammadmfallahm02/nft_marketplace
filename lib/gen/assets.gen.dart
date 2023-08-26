@@ -21,8 +21,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart_icon.svg
   String get cartIcon => 'assets/icons/cart_icon.svg';
 
-  /// File path: assets/icons/ethereum_icon.svg
-  String get ethereumIcon => 'assets/icons/ethereum_icon.svg';
+  /// File path: assets/icons/ethereum_icon.png
+  AssetGenImage get ethereumIcon =>
+      const AssetGenImage('assets/icons/ethereum_icon.png');
 
   /// File path: assets/icons/filter_icon.svg
   String get filterIcon => 'assets/icons/filter_icon.svg';
@@ -40,7 +41,7 @@ class $AssetsIconsGen {
   String get walletIcon => 'assets/icons/wallet_icon.svg';
 
   /// List of all assets
-  List<String> get values => [
+  List<dynamic> get values => [
         arrowIcon,
         backIcon,
         cartIcon,

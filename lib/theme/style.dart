@@ -9,8 +9,17 @@ class MyTextStyle {
       fontSize: 38,
       color: Color(0xff262A2F),
       fontFamily: FontFamily.atyp);
-      static const TextStyle exploreDescription = TextStyle(
-      fontWeight: FontWeight.normal,
-      fontSize: 17,
-      color: Color(0x59000000));
+  static const TextStyle exploreDescription = TextStyle(
+      fontWeight: FontWeight.normal, fontSize: 17, color: Color(0x59000000));
+  static const TextStyle homeMadeBy = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+  );
+  static const TextStyle homeTitle =
+      TextStyle(fontFamily: FontFamily.atyp, fontSize: 40, color: Colors.white);
+  static const TextStyle homeHeaderItem =
+      TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold);
+  static const TextStyle homeHeaderItemDescription =
+      TextStyle(fontSize: 11, color: Colors.white);
 }
