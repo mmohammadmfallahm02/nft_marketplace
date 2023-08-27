@@ -27,17 +27,38 @@ class DummyDate {
     NftModel(imageUrl: Assets.images.nft43.path),
     NftModel(imageUrl: Assets.images.nft44.path),
   ];
-//   static List<NftModel> collocationModels = [
-//     NftModel(imageUrl: 'assets/images/1.jpg', name: 'HAPE #1125',price:5 ),
-//     NftModel(imageUrl: 'assets/images/2.jpg', name: 'HAPE #1525',price: 4.47),
-//     NftModel(imageUrl: 'assets/images/3.jpg', name: 'HAPE #5526',price:3.585),
-//     NftModel(imageUrl: 'assets/images/4.jpg', name: 'HAPE #3893',price:4.68),
-//     NftModel(imageUrl: 'assets/images/5.jpg', name: 'HAPE #7493',price:6.593),
-//     NftModel(imageUrl: 'assets/images/6.jpg', name: 'HAPE #2376',price:2.55),
-//     NftModel(imageUrl: 'assets/images/7.jpg', name: 'HAPE #4872',price:5.39),
-//     NftModel(imageUrl: 'assets/images/8.jpg', name: 'HAPE #6906',price:4.37),
-//     NftModel(imageUrl: 'assets/images/9.jpg', name: 'HAPE #3928',price:1.55),
-//     NftModel(imageUrl: 'assets/images/12.jpg', name: 'HAPE #2357',price: 6.388),
-//     NftModel(imageUrl: 'assets/images/13.jpg', name: 'HAPE #1364',price: 4.433),
-//   ];
+  static List<NftModel> collocationModels = [
+    NftModel(
+        imageUrl: Assets.images.homeItem1.path,
+        name: 'Hypebeast\n#2122',
+        price: '0.5 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem2.path,
+        name: 'Hypebeast\n#2123',
+        price: '0.6 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem3.path,
+        name: 'Hypebeast\n#2124',
+        price: '0.4 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem4.path,
+        name: 'Hypebeast\n#2125',
+        price: '0.5 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem5.path,
+        name: 'Hypebeast\n#2124',
+        price: '0.4 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem6.path,
+        name: 'Hypebeast\n#2125',
+        price: '0.5 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem1.path,
+        name: 'Hypebeast\n#2122',
+        price: '0.5 ETH'),
+    NftModel(
+        imageUrl: Assets.images.homeItem2.path,
+        name: 'Hypebeast\n#2123',
+        price: '0.6 ETH'),
+  ];
 }

@@ -16,8 +16,11 @@ class MyTextStyle {
     fontWeight: FontWeight.normal,
     fontSize: 16,
   );
-  static const TextStyle homeTitle =
-      TextStyle(fontFamily: FontFamily.atyp, fontSize: 40, color: Colors.white);
+  static const TextStyle homeTitle = TextStyle(
+      fontFamily: FontFamily.atyp,
+      fontSize: 44,
+      color: Colors.white,
+      height: 1);
   static const TextStyle homeHeaderItem =
       TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold);
   static const TextStyle homeHeaderItemDescription =
