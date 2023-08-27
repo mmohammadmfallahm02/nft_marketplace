@@ -12,240 +12,281 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverAppBar(
-          automaticallyImplyLeading: false,
-          expandedHeight: 300,
-          stretch: true,
-          flexibleSpace: FlexibleSpaceBar(
-            stretchModes: const [
-              StretchMode.fadeTitle,
-              StretchMode.blurBackground,
-              StretchMode.zoomBackground
-            ],
-            background: Stack(fit: StackFit.expand, children: [
-              Image.asset(
-                Assets.images.homeHeaderImage.path,
-                fit: BoxFit.cover,
+        floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            onPressed: () {},
+            label: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Container(
+                width: 162,
+                height: 84,
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(60)),
+                  color: Color(0xff303841),
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SvgPicture.asset(
+                        Assets.icons.menuIcon,
+                        color: Colors.white,
+                      ),
+                      const Text('Menu',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          )),
+                    ]),
               ),
-              Positioned(
-                  right: 16,
-                  bottom: 26,
-                  child: SizedBox(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Text(
-                          'Hypebeast',
-                          style: MyTextStyle.homeTitle,
-                        ),
-                        Row(
+            )),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverAppBar(
+              automaticallyImplyLeading: false,
+              expandedHeight: 300,
+              stretch: true,
+              flexibleSpace: FlexibleSpaceBar(
+                stretchModes: const [
+                  StretchMode.fadeTitle,
+                  StretchMode.blurBackground,
+                  StretchMode.zoomBackground
+                ],
+                background: Stack(fit: StackFit.expand, children: [
+                  Image.asset(
+                    Assets.images.homeHeaderImage.path,
+                    fit: BoxFit.cover,
+                  ),
+                  Positioned(
+                      right: 16,
+                      bottom: 26,
+                      child: SizedBox(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            RichText(
-                              text: TextSpan(
-                                  text: 'By ',
-                                  style: MyTextStyle.homeMadeBy,
-                                  children: [
-                                    TextSpan(
-                                        text: 'Matt Sypien',
-                                        style: MyTextStyle.homeMadeBy.copyWith(
-                                            fontWeight: FontWeight.bold)),
-                                  ]),
+                            const Text(
+                              'Hypebeast',
+                              style: MyTextStyle.homeTitle,
                             ),
-                            const SizedBox(
-                              width: 6,
-                            ),
-                            SvgPicture.asset(Assets.icons.tickIcon)
-                          ],
-                        ),
-                        SizedBox(
-                          height: 203,
-                          width: 220,
-                          child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            Row(
                               children: [
+                                RichText(
+                                  text: TextSpan(
+                                      text: 'By ',
+                                      style: MyTextStyle.homeMadeBy,
+                                      children: [
+                                        TextSpan(
+                                            text: 'Matt Sypien',
+                                            style: MyTextStyle.homeMadeBy
+                                                .copyWith(
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                      ]),
+                                ),
                                 const SizedBox(
-                                  width: 10,
+                                  width: 6,
                                 ),
-                                Container(
-                                  width: 97,
-                                  height: 132,
-                                  decoration: const BoxDecoration(
-                                      color: Color(0xffF4B7A8),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(25))),
-                                  padding: const EdgeInsets.all(16),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                          width: 34,
-                                          height: 34,
-                                          decoration: const BoxDecoration(
-                                              color: Colors.white30,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(7.81))),
-                                          child: Image.asset(
-                                              Assets.icons.ethereumIcon.path)),
-                                      const Text(
-                                        '0.53',
-                                        style: MyTextStyle.homeHeaderItem,
-                                      ),
-                                      const Text('Floor Price',
-                                          style: MyTextStyle
-                                              .homeHeaderItemDescription)
-                                    ],
-                                  ),
-                                ),
-                                Column(
+                                SvgPicture.asset(Assets.icons.tickIcon)
+                              ],
+                            ),
+                            SizedBox(
+                              height: 203,
+                              width: 220,
+                              child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     const SizedBox(
-                                      height: 10,
+                                      width: 10,
                                     ),
                                     Container(
                                       width: 97,
-                                      height: 86,
+                                      height: 132,
                                       decoration: const BoxDecoration(
-                                          color: Colors.white30,
+                                          color: Color(0xffF4B7A8),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(25))),
                                       padding: const EdgeInsets.all(16),
-                                      child: const Column(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            '5.6k',
+                                          Container(
+                                              width: 34,
+                                              height: 34,
+                                              decoration: const BoxDecoration(
+                                                  color: Colors.white30,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              7.81))),
+                                              child: Image.asset(Assets
+                                                  .icons.ethereumIcon.path)),
+                                          const Text(
+                                            '0.53',
                                             style: MyTextStyle.homeHeaderItem,
                                           ),
-                                          Text('Owners',
+                                          const Text('Floor Price',
                                               style: MyTextStyle
                                                   .homeHeaderItemDescription)
                                         ],
                                       ),
                                     ),
-                                    Container(
-                                      width: 97,
-                                      height: 86,
-                                      decoration: const BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(25))),
-                                      padding: const EdgeInsets.all(16),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            '9.9k',
-                                            style: MyTextStyle.homeHeaderItem
-                                                .copyWith(
-                                                    color: const Color(
-                                                        0xff262A2F)),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          width: 97,
+                                          height: 86,
+                                          decoration: const BoxDecoration(
+                                              color: Colors.white30,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(25))),
+                                          padding: const EdgeInsets.all(16),
+                                          child: const Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '5.6k',
+                                                style:
+                                                    MyTextStyle.homeHeaderItem,
+                                              ),
+                                              Text('Owners',
+                                                  style: MyTextStyle
+                                                      .homeHeaderItemDescription)
+                                            ],
                                           ),
-                                          Text(
-                                            'Items',
-                                            style: MyTextStyle
-                                                .homeHeaderItemDescription
-                                                .copyWith(
-                                                    color: const Color(
-                                                        0x80262A2F)),
-                                          )
-                                        ],
-                                      ),
+                                        ),
+                                        Container(
+                                          width: 97,
+                                          height: 86,
+                                          decoration: const BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(25))),
+                                          padding: const EdgeInsets.all(16),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '9.9k',
+                                                style: MyTextStyle
+                                                    .homeHeaderItem
+                                                    .copyWith(
+                                                        color: const Color(
+                                                            0xff262A2F)),
+                                              ),
+                                              Text(
+                                                'Items',
+                                                style: MyTextStyle
+                                                    .homeHeaderItemDescription
+                                                    .copyWith(
+                                                        color: const Color(
+                                                            0x80262A2F)),
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                      ],
                                     )
-                                  ],
-                                )
-                              ]),
-                        )
-                      ],
-                    ),
-                  ))
-            ]),
-          ),
-        ),
-        SliverToBoxAdapter(
-            child: Directionality(
-          textDirection: TextDirection.rtl,
-          child: MasonryGridView.count(
-              physics: const NeverScrollableScrollPhysics(),
-              primary: false,
-              itemCount: DummyDate.collocationModels.length + 1,
-              padding: const EdgeInsets.fromLTRB(16, 25, 16, 20),
-              shrinkWrap: true,
-              mainAxisSpacing: 12,
-              crossAxisCount: 2,
-              crossAxisSpacing: 0,
-              itemBuilder: (context, index) {
-                switch (index) {
-                  case 0:
-                    return Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 66,
-                          width: 170,
-                          decoration: BoxDecoration(
-                              color: const Color(0xff303841),
-                              borderRadius: BorderRadius.circular(32)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 59,
-                                height: 56,
-                                alignment: Alignment.center,
-                                margin: const EdgeInsets.only(right: 5),
-                                decoration: const BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(30)),
-                                    color: Colors.white),
-                                child: SvgPicture.asset(
-                                  Assets.icons.filterIcon,
-                                  width: 25,
-                                  height: 23,
-                                ),
+                                  ]),
+                            )
+                          ],
+                        ),
+                      ))
+                ]),
+              ),
+            ),
+            SliverToBoxAdapter(
+                child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: MasonryGridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  primary: false,
+                  itemCount: DummyDate.collocationModels.length + 1,
+                  padding: const EdgeInsets.fromLTRB(16, 25, 16, 20),
+                  shrinkWrap: true,
+                  mainAxisSpacing: 12,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 0,
+                  itemBuilder: (context, index) {
+                    switch (index) {
+                      case 0:
+                        return Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 66,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                  color: const Color(0xff303841),
+                                  borderRadius: BorderRadius.circular(32)),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 59,
+                                    height: 56,
+                                    alignment: Alignment.center,
+                                    margin: const EdgeInsets.only(right: 5),
+                                    decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(30)),
+                                        color: Colors.white),
+                                    child: SvgPicture.asset(
+                                      Assets.icons.filterIcon,
+                                      width: 25,
+                                      height: 23,
+                                    ),
+                                  ),
+                                  const Text('Filter',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 18,
+                                      )),
+                                  const SizedBox()
+                                ],
                               ),
-                              const Text('Filter',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18,
-                                  )),
-                              const SizedBox()
-                            ],
+                            ));
+
+                      default:
+                        final model = DummyDate.collocationModels[index - 1];
+
+                        return Align(
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                                height: 195,
+                                width: 175,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            Image.asset(model.imageUrl).image,
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(32)),
+                                child: ModelDetailWidget(model: model)),
                           ),
-                        ));
-
-                  default:
-                    final model = DummyDate.collocationModels[index - 1];
-
-                    return Align(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                            height: 195,
-                            width: 175,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: Image.asset(model.imageUrl).image,
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(32)),
-                            child: ModelDetailWidget(model: model)),
-                      ),
-                    );
-                }
-              }),
-        ))
-      ],
-    ));
+                        );
+                    }
+                  }),
+            ))
+          ],
+        ));
   }
 }
 
