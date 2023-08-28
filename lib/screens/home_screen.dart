@@ -106,39 +106,53 @@ class HomeScreen extends StatelessWidget {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Container(
-                                      width: 97,
-                                      height: 132,
-                                      decoration: const BoxDecoration(
-                                          color: Color(0xffF4B7A8),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(25))),
-                                      padding: const EdgeInsets.all(16),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                              width: 34,
-                                              height: 34,
-                                              decoration: const BoxDecoration(
-                                                  color: Colors.white30,
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(
-                                                              7.81))),
-                                              child: Image.asset(Assets
-                                                  .icons.ethereumIcon.path)),
-                                          const Text(
-                                            '0.53',
-                                            style: MyTextStyle.homeHeaderItem,
-                                          ),
-                                          const Text('Floor Price',
-                                              style: MyTextStyle
-                                                  .homeHeaderItemDescription)
-                                        ],
+                                    GradientBorder(
+                                      gradient: const LinearGradient(
+                                          begin: Alignment.bottomRight,
+                                          end: Alignment.topLeft,
+                                          colors: [
+                                            Colors.white,
+                                            Color(0xffF4B7A8),
+                                          ]),
+                                      strokeWidth: 1,
+                                      radius: 25,
+                                      child: Container(
+                                        width: 97,
+                                        height: 132,
+                                        decoration: const BoxDecoration(
+                                            color: Color(0xffF4B7A8),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(25))),
+                                        padding: const EdgeInsets.all(16),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                                width: 34,
+                                                height: 34,
+                                                decoration: const BoxDecoration(
+                                                    color: Colors.white30,
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                7.81))),
+                                                child: Image.asset(Assets
+                                                    .icons
+                                                    .ethereumIcon
+                                                    .path)),
+                                            const Text(
+                                              '0.53',
+                                              style:
+                                                  MyTextStyle.homeHeaderItem,
+                                            ),
+                                            const Text('Floor Price',
+                                                style: MyTextStyle
+                                                    .homeHeaderItemDescription)
+                                          ],
+                                        ),
                                       ),
                                     ),
                                     Column(
@@ -148,27 +162,39 @@ class HomeScreen extends StatelessWidget {
                                         const SizedBox(
                                           height: 10,
                                         ),
-                                        Container(
-                                          width: 97,
-                                          height: 86,
-                                          decoration: const BoxDecoration(
-                                              color: Colors.white30,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(25))),
-                                          padding: const EdgeInsets.all(16),
-                                          child: const Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                '5.6k',
-                                                style:
-                                                    MyTextStyle.homeHeaderItem,
-                                              ),
-                                              Text('Owners',
+                                        GradientBorder(
+                                          gradient: const LinearGradient(
+                                              begin: Alignment.bottomRight,
+                                              end: Alignment.topLeft,
+                                              colors: [
+                                                Colors.white,
+                                                Color(0xffF4B7A8),
+                                              ]),
+                                          strokeWidth: 1,
+                                          radius: 25,
+                                          child: Container(
+                                            width: 97,
+                                            height: 86,
+                                            decoration: const BoxDecoration(
+                                                color: Colors.white30,
+                                                borderRadius:
+                                                    BorderRadius.all(
+                                                        Radius.circular(25))),
+                                            padding: const EdgeInsets.all(16),
+                                            child: const Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  '5.6k',
                                                   style: MyTextStyle
-                                                      .homeHeaderItemDescription)
-                                            ],
+                                                      .homeHeaderItem,
+                                                ),
+                                                Text('Owners',
+                                                    style: MyTextStyle
+                                                        .homeHeaderItemDescription)
+                                              ],
+                                            ),
                                           ),
                                         ),
                                         Container(
@@ -331,49 +357,62 @@ class _ModelDetailWidgetState extends State<ModelDetailWidget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(21)),
-                    child: Container(
-                      height: 41,
-                      width: 110,
-                      decoration: const BoxDecoration(
-                          color: Colors.white30,
-                          borderRadius: BorderRadius.all(Radius.circular(21))),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                        child: Directionality(
-                          textDirection: TextDirection.ltr,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              const Text(
-                                'price',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.white70,
-                                ),
-                              ),
-                              Text(
-                                widget.model.price,
-                                style: const TextStyle(
+                  GradientBorder(
+                    gradient: const LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [Colors.white, Colors.white10]),
+                    strokeWidth: 0.5,
+                    radius: 21,
+                    padding: 0.3,
+                    child: ClipRRect(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(21)),
+                      child: Container(
+                        height: 41,
+                        width: 110,
+                        decoration: const BoxDecoration(
+                            color: Colors.white30,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(21))),
+                        child: BackdropFilter(
+                          filter:
+                              ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: Row(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const Text(
+                                  'price',
+                                  style: TextStyle(
                                     fontSize: 10,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Container(
-                                width: 14,
-                                height: 14,
-                                alignment: Alignment.center,
-                                decoration: const BoxDecoration(
-                                    color: Colors.white30,
-                                    shape: BoxShape.circle),
-                                child: Image.asset(
-                                  Assets.icons.ethereumIcon.path,
-                                  width: 12,
-                                  height: 12,
+                                    color: Colors.white70,
+                                  ),
                                 ),
-                              )
-                            ],
+                                Text(
+                                  widget.model.price,
+                                  style: const TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Container(
+                                  width: 14,
+                                  height: 14,
+                                  alignment: Alignment.center,
+                                  decoration: const BoxDecoration(
+                                      color: Colors.white30,
+                                      shape: BoxShape.circle),
+                                  child: Image.asset(
+                                    Assets.icons.ethereumIcon.path,
+                                    width: 12,
+                                    height: 12,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -399,4 +438,70 @@ class _ModelDetailWidgetState extends State<ModelDetailWidget> {
       ),
     );
   }
+}
+
+class GradientBorder extends StatelessWidget {
+  final _GradientPainter _painter;
+  final Widget _child;
+  final double padding;
+
+  GradientBorder({
+    super.key,
+    required double strokeWidth,
+    required double radius,
+    required Gradient gradient,
+    required Widget child,
+    this.padding = 0.5,
+  })  : _painter = _GradientPainter(
+            strokeWidth: strokeWidth, radius: radius, gradient: gradient),
+        _child = child;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _painter,
+      child: Padding(
+        padding: const EdgeInsets.all(0.5),
+        child: _child,
+      ),
+    );
+  }
+}
+
+class _GradientPainter extends CustomPainter {
+  final Paint _paint = Paint();
+  final double radius;
+  final double strokeWidth;
+  final Gradient gradient;
+
+  _GradientPainter(
+      {required this.strokeWidth,
+      required this.radius,
+      required this.gradient});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    // create outer rectangle equals size
+    Rect outerRect = Offset.zero & size;
+    var outerRRect =
+        RRect.fromRectAndRadius(outerRect, Radius.circular(radius));
+
+    // create inner rectangle smaller by strokeWidth
+    Rect innerRect = Rect.fromLTWH(strokeWidth, strokeWidth,
+        size.width - strokeWidth * 2, size.height - strokeWidth * 2);
+    var innerRRect = RRect.fromRectAndRadius(
+        innerRect, Radius.circular(radius - strokeWidth));
+
+    // apply gradient shader
+    _paint.shader = gradient.createShader(outerRect);
+
+    // create difference between outer and inner paths and draw it
+    Path path1 = Path()..addRRect(outerRRect);
+    Path path2 = Path()..addRRect(innerRRect);
+    var path = Path.combine(PathOperation.difference, path1, path2);
+    canvas.drawPath(path, _paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
 }
