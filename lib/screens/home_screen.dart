@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -329,44 +331,51 @@ class _ModelDetailWidgetState extends State<ModelDetailWidget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 41,
-                    width: 110,
-                    decoration: const BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(21))),
-                    child: Directionality(
-                      textDirection: TextDirection.ltr,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Text(
-                            'price',
-                            style: TextStyle(
-                              fontSize: 10,
-                              color: Colors.white70,
-                            ),
+                  ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(21)),
+                    child: Container(
+                      height: 41,
+                      width: 110,
+                      decoration: const BoxDecoration(
+                          color: Colors.white30,
+                          borderRadius: BorderRadius.all(Radius.circular(21))),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const Text(
+                                'price',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              Text(
+                                widget.model.price,
+                                style: const TextStyle(
+                                    fontSize: 10,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Container(
+                                width: 14,
+                                height: 14,
+                                alignment: Alignment.center,
+                                decoration: const BoxDecoration(
+                                    color: Colors.white30,
+                                    shape: BoxShape.circle),
+                                child: Image.asset(
+                                  Assets.icons.ethereumIcon.path,
+                                  width: 12,
+                                  height: 12,
+                                ),
+                              )
+                            ],
                           ),
-                          Text(
-                            widget.model.price,
-                            style: const TextStyle(
-                                fontSize: 10,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Container(
-                            width: 14,
-                            height: 14,
-                            alignment: Alignment.center,
-                            decoration: const BoxDecoration(
-                                color: Colors.white30, shape: BoxShape.circle),
-                            child: Image.asset(
-                              Assets.icons.ethereumIcon.path,
-                              width: 12,
-                              height: 12,
-                            ),
-                          )
-                        ],
+                        ),
                       ),
                     ),
                   ),
