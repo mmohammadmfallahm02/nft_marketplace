@@ -144,6 +144,10 @@ class $AssetsImagesGen {
   AssetGenImage get ownerPicture =>
       const AssetGenImage('assets/images/owner_picture.png');
 
+  /// File path: assets/images/single_model.png
+  AssetGenImage get singleModel =>
+      const AssetGenImage('assets/images/single_model.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         homeHeaderImage,
@@ -171,7 +175,8 @@ class $AssetsImagesGen {
         nft42,
         nft43,
         nft44,
-        ownerPicture
+        ownerPicture,
+        singleModel
       ];
 }
 

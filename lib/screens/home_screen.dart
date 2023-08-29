@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nft_marketplace/dummy_data.dart';
 import 'package:nft_marketplace/gen/assets.gen.dart';
 import 'package:nft_marketplace/models/nft_model.dart';
+import 'package:nft_marketplace/screens/single_model_screen.dart';
 import 'package:nft_marketplace/theme/style.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -140,13 +141,10 @@ class HomeScreen extends StatelessWidget {
                                                             Radius.circular(
                                                                 7.81))),
                                                 child: Image.asset(Assets
-                                                    .icons
-                                                    .ethereumIcon
-                                                    .path)),
+                                                    .icons.ethereumIcon.path)),
                                             const Text(
                                               '0.53',
-                                              style:
-                                                  MyTextStyle.homeHeaderItem,
+                                              style: MyTextStyle.homeHeaderItem,
                                             ),
                                             const Text('Floor Price',
                                                 style: MyTextStyle
@@ -177,9 +175,8 @@ class HomeScreen extends StatelessWidget {
                                             height: 86,
                                             decoration: const BoxDecoration(
                                                 color: Colors.white30,
-                                                borderRadius:
-                                                    BorderRadius.all(
-                                                        Radius.circular(25))),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(25))),
                                             padding: const EdgeInsets.all(16),
                                             child: const Column(
                                               crossAxisAlignment:
@@ -297,7 +294,11 @@ class HomeScreen extends StatelessWidget {
 
                         return Align(
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () =>
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (_) => SingleModelScreen(
+                                          model: model,
+                                        ))),
                             child: Container(
                                 height: 195,
                                 width: 175,
@@ -366,8 +367,7 @@ class _ModelDetailWidgetState extends State<ModelDetailWidget> {
                     radius: 21,
                     padding: 0.3,
                     child: ClipRRect(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(21)),
+                      borderRadius: const BorderRadius.all(Radius.circular(21)),
                       child: Container(
                         height: 41,
                         width: 110,
@@ -376,13 +376,11 @@ class _ModelDetailWidgetState extends State<ModelDetailWidget> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(21))),
                         child: BackdropFilter(
-                          filter:
-                              ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                           child: Directionality(
                             textDirection: TextDirection.ltr,
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text(
                                   'price',
