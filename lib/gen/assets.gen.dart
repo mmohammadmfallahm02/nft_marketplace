@@ -37,6 +37,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/tick_icon.svg
   String get tickIcon => 'assets/icons/tick_icon.svg';
 
+  /// File path: assets/icons/tick_icon_outline.png
+  AssetGenImage get tickIconOutline =>
+      const AssetGenImage('assets/icons/tick_icon_outline.png');
+
   /// File path: assets/icons/wallet_icon.svg
   String get walletIcon => 'assets/icons/wallet_icon.svg';
 
@@ -50,6 +54,7 @@ class $AssetsIconsGen {
         menuIcon,
         placebidIcon,
         tickIcon,
+        tickIconOutline,
         walletIcon
       ];
 }
