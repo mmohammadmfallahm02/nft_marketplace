@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +8,7 @@ import 'package:nft_marketplace/gen/fonts.gen.dart';
 import 'package:nft_marketplace/models/nft_model.dart';
 import 'package:nft_marketplace/screens/home_screen.dart';
 import 'package:nft_marketplace/theme/style.dart';
+import 'package:slide_action/slide_action.dart';
 
 class SingleModelScreen extends StatelessWidget {
   final NftModel model;
@@ -210,7 +213,7 @@ class SingleModelScreen extends StatelessWidget {
                 ],
               )),
           Positioned(
-              bottom: 21,
+              bottom: 0,
               right: 0,
               left: 0,
               child: Column(
@@ -279,35 +282,116 @@ class SingleModelScreen extends StatelessWidget {
                             ]),
                         strokeWidth: 1,
                         radius: 36,
-                        child: Container(
-                          width: 171,
-                          height: 146,
-                          decoration: const BoxDecoration(
-                              color: Color(0xff000000),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(36))),
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text('Owner',
-                                  style: TextStyle(
-                                      fontSize: 14, color: Color(0x804D4F51))),
-                              Image.asset(Assets.images.ownerPicture.path),
-                              Row(
+                        child: ClipRRect(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(36)),
+                          child: Container(
+                            width: 171,
+                            height: 150,
+                            decoration: const BoxDecoration(
+                                color: Colors.white30,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(36))),
+                            padding: const EdgeInsets.all(18),
+                            child: BackdropFilter(
+                              filter:
+                                  ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text('Floor Price',
-                                      style: MyTextStyle
-                                          .homeHeaderItemDescription),
-                                  Image.asset(Assets.icons.tickIconOutline.path)
+                                  const Text('Owner',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Color(0x804D4F51))),
+                                  Image.asset(Assets.images.ownerPicture.path),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Text('Adam Nash',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                      Image.asset(
+                                          Assets.icons.tickIconOutline.path)
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 5),
+                    child: SlideAction(
+                      trackHeight: 75,
+                      thumbWidth: 84,
+                      action: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const HomeScreen()));
+                      },
+                      thumbBuilder: (BuildContext context,
+                          SlideActionStateMixin currentState) {
+                        return Container(
+                          margin: const EdgeInsets.all(4.0),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 8,
+                              ),
+                            ],
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                          child: Center(
+                              child:
+                                  SvgPicture.asset(Assets.icons.placebidIcon)),
+                        );
+                      },
+                      stretchThumb: false,
+                      trackBuilder: (context, state) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            color: const Color(0xff262A2F),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 8,
+                              ),
+                            ],
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                          child: Opacity(
+                            opacity: lerpDouble(
+                                1,
+                                0,
+                                (state.thumbFractionalPosition * 2)
+                                    .clamp(0.0, 1.0))!,
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Text(
+                                  "Place Bid",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   )
                 ],
               ))
