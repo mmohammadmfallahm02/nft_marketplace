@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nft_marketplace/gen/assets.gen.dart';
 import 'package:nft_marketplace/gen/fonts.gen.dart';
 import 'package:nft_marketplace/models/nft_model.dart';
 import 'package:nft_marketplace/screens/home_screen.dart';
+import 'package:nft_marketplace/screens/purchase_screen.dart';
 import 'package:nft_marketplace/theme/style.dart';
 import 'package:slide_action/slide_action.dart';
 
@@ -333,7 +333,7 @@ class SingleModelScreen extends StatelessWidget {
                       thumbWidth: 84,
                       action: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => const HomeScreen()));
+                            builder: (_) => const PurchaseScreen()));
                       },
                       thumbBuilder: (BuildContext context,
                           SlideActionStateMixin currentState) {
