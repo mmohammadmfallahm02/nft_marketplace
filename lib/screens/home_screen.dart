@@ -15,36 +15,28 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton.extended(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            onPressed: () {},
-            label: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Container(
-                width: 162,
-                height: 84,
-                padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(60)),
-                  color: Color(0xff303841),
-                ),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SvgPicture.asset(
-                        Assets.icons.menuIcon,
-                        color: Colors.white,
-                      ),
-                      const Text('Menu',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18,
-                          )),
-                    ]),
-              ),
-            )),
+        floatingActionButton: Container(
+          width: 162,
+          height: 84,
+          padding: const EdgeInsets.all(16),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(60)),
+            color: Color(0xff303841),
+          ),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            SvgPicture.asset(
+              Assets.icons.menuIcon,
+              color: Colors.white,
+            ),
+            const Text('Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                )),
+          ]),
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
