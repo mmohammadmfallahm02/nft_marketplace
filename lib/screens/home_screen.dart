@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                                       radius: 25,
                                       child: Container(
                                         width: 97,
-                                        height: 132,
+                                        height: 138,
                                         decoration: const BoxDecoration(
                                             color: Color(0xffF4B7A8),
                                             borderRadius: BorderRadius.all(
@@ -158,13 +158,13 @@ class HomeScreen extends StatelessWidget {
                                               end: Alignment.topLeft,
                                               colors: [
                                                 Colors.white,
-                                                Color(0xffF4B7A8),
+                                                Colors.white30,
                                               ]),
                                           strokeWidth: 1,
                                           radius: 25,
                                           child: Container(
                                             width: 97,
-                                            height: 86,
+                                            height: 87,
                                             decoration: const BoxDecoration(
                                                 color: Colors.white30,
                                                 borderRadius: BorderRadius.all(
@@ -188,7 +188,7 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         Container(
                                           width: 97,
-                                          height: 86,
+                                          height: 87,
                                           decoration: const BoxDecoration(
                                               color: Colors.white,
                                               borderRadius: BorderRadius.all(
